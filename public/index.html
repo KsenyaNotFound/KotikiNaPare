@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Котики на паре</title>
+<link rel="stylesheet" href="/style.css">
+<script defer src="/app.js"></script>
+</head>
+<body><main class="shell">
+<header><div class="brand"><span class="mark" data-cat="dark"></span>Котики на паре</div>
+<button class="quiet leave" hidden>Покинуть пару</button></header>
+<section class="hero">
+<div class="intro">
+<div class="eyebrow"><span>♥</span> <span id="room-label">Электронная очередь</span></div>
+<h1>Котики <em>на паре</em></h1>
+<p>Нужно выйти? Займи очередь, и мы покажем, когда настанет твой черёд.</p>
+</div>
+<div class="art" aria-hidden="true"><span class="spark one">✦</span><span class="spark two">♥</span><span class="spark three">✦</span>
+<div class="kitty black" data-cat="dark"></div><div class="kitty white" data-cat="light"></div></div>
+</section>
+<section class="control" aria-label="Участие в паре">
+<p id="loading">Загружаем пару…</p>
+<form hidden>
+<div class="join-heading"><strong>Присоединиться к паре</strong><p>У всех студентов на паре должен быть одинаковый код.</p></div>
+<label>Имя<input name="name" autocomplete="given-name" placeholder="Например, Маша" required maxlength="40"></label>
+<label>Код пары<input name="room" autocapitalize="none" spellcheck="false" placeholder="Например, математика-01" required minlength="3" maxlength="32"></label>
+<button class="primary" type="submit">Войти</button>
+</form>
+<div id="account" hidden><strong></strong><p role="status"></p></div>
+<button id="action" class="primary" hidden></button>
+</section>
+<p class="error" role="alert" hidden></p>
+<div class="columns">
+<section class="card present"><h2><span class="icon" aria-hidden="true">⌂</span>На паре <b>0</b></h2>
+<ul hidden></ul><div class="empty">Здесь будут студенты, которые сейчас в аудитории.</div></section>
+<section class="card waiting"><h2><span class="icon" aria-hidden="true">≡</span>В очереди <b>0</b></h2>
+<ol hidden></ol><div class="empty">Пока никто не ждёт.</div></section>
+<section class="card outside"><h2><span class="icon" aria-hidden="true">↗</span>Вышел <b>0</b></h2>
+<ul hidden></ul><div class="empty"><span class="mini-cat" data-cat="light"></span>Сейчас свободно</div></section>
+</div>
+</main></body></html>
